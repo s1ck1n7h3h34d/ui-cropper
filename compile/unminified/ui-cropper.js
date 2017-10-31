@@ -1,11 +1,11 @@
 /*!
- * uiCropper v1.0.4
+ * uiCropper v1.0.6
  * https://crackerakiua.github.io/ui-cropper/
  *
  * Copyright (c) 2017 Alex Kaul
  * License: MIT
  *
- * Generated at Friday, September 8th, 2017, 5:11:05 PM
+ * Generated at Tuesday, October 31st, 2017, 4:00:20 PM
  */
 (function() {
 angular.module('uiCropper', []);
@@ -1671,7 +1671,7 @@ angular.module('uiCropper').service('cropEXIF', [function () {
     }
 
     function objectURLToBlob(url, callback) {
-        var http = new XMLHttpRequest();
+        var http = new _XMLHttpRequest();
         http.open('GET', url, true);
         http.responseType = 'blob';
         http.onload = function (e) {
@@ -1709,7 +1709,7 @@ angular.module('uiCropper').service('cropEXIF', [function () {
                     fileReader.readAsArrayBuffer(blob);
                 });
             }
-            var http = new XMLHttpRequest();
+            var http = new _XMLHttpRequest();
             http.onload = function () {
                 if (this.status === 200 || this.status === 0) {
                     handleBinaryFile(http.response);

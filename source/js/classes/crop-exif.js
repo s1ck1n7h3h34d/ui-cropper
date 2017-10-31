@@ -318,7 +318,7 @@ angular.module('uiCropper').service('cropEXIF', [function () {
     }
 
     function objectURLToBlob(url, callback) {
-        var http = new XMLHttpRequest();
+        var http = new _XMLHttpRequest();
         http.open('GET', url, true);
         http.responseType = 'blob';
         http.onload = function (e) {
@@ -356,7 +356,7 @@ angular.module('uiCropper').service('cropEXIF', [function () {
                     fileReader.readAsArrayBuffer(blob);
                 });
             }
-            var http = new XMLHttpRequest();
+            var http = new _XMLHttpRequest();
             http.onload = function () {
                 if (this.status === 200 || this.status === 0) {
                     handleBinaryFile(http.response);
