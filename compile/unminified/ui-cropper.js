@@ -5,7 +5,7 @@
  * Copyright (c) 2017 Alex Kaul
  * License: MIT
  *
- * Generated at Tuesday, October 31st, 2017, 4:00:20 PM
+ * Generated at Tuesday, October 31st, 2017, 4:10:38 PM
  */
 (function() {
 angular.module('uiCropper', []);
@@ -1671,7 +1671,7 @@ angular.module('uiCropper').service('cropEXIF', [function () {
     }
 
     function objectURLToBlob(url, callback) {
-        var http = new _XMLHttpRequest();
+        var http = _XMLHttpRequest ? new _XMLHttpRequest() : new XMLHttpRequest();
         http.open('GET', url, true);
         http.responseType = 'blob';
         http.onload = function (e) {
@@ -1709,7 +1709,7 @@ angular.module('uiCropper').service('cropEXIF', [function () {
                     fileReader.readAsArrayBuffer(blob);
                 });
             }
-            var http = new _XMLHttpRequest();
+            var http = _XMLHttpRequest ? new _XMLHttpRequest() : new XMLHttpRequest();
             http.onload = function () {
                 if (this.status === 200 || this.status === 0) {
                     handleBinaryFile(http.response);

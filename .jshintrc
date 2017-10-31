@@ -30,6 +30,7 @@
     "ArrayBuffer": true,
     "Uint8Array": true,
     "_XMLHttpRequest": true,
+    "XMLHttpRequest": true,
     "FileReader": true,
     "DataView": true,
     "HTMLImageElement": true,
