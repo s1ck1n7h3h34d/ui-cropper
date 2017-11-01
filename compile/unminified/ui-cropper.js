@@ -2,10 +2,10 @@
  * uiCropper v1.0.4
  * https://crackerakiua.github.io/ui-cropper/
  *
- * Copyright (c) 2016 Alex Kaul
+ * Copyright (c) 2017 Alex Kaul
  * License: MIT
  *
- * Generated at Friday, December 23rd, 2016, 3:05:21 PM
+ * Generated at Wednesday, November 1st, 2017, 5:11:28 PM
  */
 (function() {
 angular.module('uiCropper', []);
@@ -1671,7 +1671,7 @@ angular.module('uiCropper').service('cropEXIF', [function () {
     }
 
     function objectURLToBlob(url, callback) {
-        var http = new XMLHttpRequest();
+        var http = _XMLHttpRequest ? new _XMLHttpRequest() : new XMLHttpRequest();
         http.open('GET', url, true);
         http.responseType = 'blob';
         http.onload = function (e) {
@@ -1709,7 +1709,7 @@ angular.module('uiCropper').service('cropEXIF', [function () {
                     fileReader.readAsArrayBuffer(blob);
                 });
             }
-            var http = new XMLHttpRequest();
+            var http = _XMLHttpRequest ? new _XMLHttpRequest() : new XMLHttpRequest();
             http.onload = function () {
                 if (this.status === 200 || this.status === 0) {
                     handleBinaryFile(http.response);
@@ -3104,7 +3104,7 @@ angular.module('uiCropper').directive('uiCropper', ['$timeout', 'cropHost', 'cro
             /* if canvas is 100x100 crop coordinates will be x: 10, y: 10, w: 10, h: 10 */
             areaMinRelativeSize: '=?',
             resultImageSize: '=?',
-            resultImageFormat: '=?',
+            resultImageFormat: '@',
             resultImageQuality: '=?',
 
             aspectRatio: '=?',
